@@ -1,6 +1,11 @@
 :root {
-  --main-dark: #666;
-  --main-light: #ededed;
+  --title: #333;
+  --background: #ededed;
+  --button-border: #333;
+  --button: #555;
+  --button-hover: #444;
+  --button-active: #333;
+  --border: #222;
 }
 
 *,
@@ -15,11 +20,10 @@ html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
   line-height: 1.6;
-  background-color: var(--main-light);
-  color: var(--main-dark);
 }
 
 body {
+  background-color: var(--background);
   font-size: 1.6rem;
   text-align: center;
 }
@@ -27,12 +31,15 @@ body {
 header {
   margin-top: 3rem;
   padding: 2rem;
-  font-size: 2.4rem;
-  color: #444;
+  font-size: 3.2rem;
 }
 
 h1 {
   line-height: 1.2;
+}
+
+.title {
+  color: var(--title);
 }
 
 .container {
@@ -40,21 +47,23 @@ h1 {
 }
 
 .button {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   margin: 1rem;
-  border-radius: 8px;
-  background-color: var(--main-dark);
-  color: var(--main-light);
+  border-radius: 6px;
+  border: 2px solid var(--button-border);
+  background-color: var(--button);
+  color: var(--background);
   font-family: inherit;
+  font-size: 1.6rem;
   outline: none;
 }
 
 .button:hover {
-  background-color: #555;
+  background-color: var(--button-hover);
 }
 
 .button:active {
-  background-color: #444;
+  background-color: var(--button-active);
 }
 
 .grid {
@@ -62,10 +71,21 @@ h1 {
   max-width: 500px;
   min-height: 500px;
   margin: 2rem auto;
-  border: 1px solid var(--main-dark);
+  border: 2px solid var(--border);
 }
 
 .grid-element {
-  border: 1px solid var(--main-dark);
-  background-color: var(--main-light);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+@media (max-width: 450px) {
+  header {
+    font-size: 2.4rem;
+  }
+
+  .grid {
+    max-width: 300px;
+    min-height: 300px;
+  }
 }
