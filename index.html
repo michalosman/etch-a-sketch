@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <h1 class="title">Etch-a-sketch</h1>
     </header>
-    <div id="main-container" class="container">
-      <button id="reset-button" class="button">Change size</button>
-      <div id="grid-container" class="grid"></div>
-    </div>
+    <main class="main">
+      <div class="settings">
+        <input type="color" id="colorPicker" value="#333333" />
+        <button id="rainbowBtn">Rainbow mode</button>
+        <button id="eraserBtn">Eraser</button>
+        <button id="clearBtn">Clear</button>
+        <div class="range-value" id="rangeValue">Size: 16 x 16</div>
+        <input type="range" id="sizePicker" value="16" min="1" max="64" />
+      </div>
+      <div id="grid" class="grid"></div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
