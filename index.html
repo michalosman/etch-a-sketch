@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -18,15 +22,21 @@
     </header>
     <main class="main">
       <div class="settings">
-        <input type="color" id="colorPicker" value="#333333" />
+        <input id="colorPicker" type="color" value="#333333" />
         <button id="rainbowBtn">Rainbow mode</button>
         <button id="eraserBtn">Eraser</button>
         <button id="clearBtn">Clear</button>
-        <div class="range-value" id="rangeValue">Size: 16 x 16</div>
-        <input type="range" id="sizePicker" value="16" min="1" max="64" />
+        <div id="rangeValue" class="range-value">Size: 16 x 16</div>
+        <input id="sizePicker" type="range" value="16" min="1" max="64" />
       </div>
       <div id="grid" class="grid"></div>
     </main>
+    <footer class="footer">
+      <p>Copyright © 2021 michalosman</p>
+      <a href="https://github.com/michalosman" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

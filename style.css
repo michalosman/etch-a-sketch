@@ -16,10 +16,14 @@ html {
   font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
   line-height: 1.6;
+  /* footer support */
+  position: relative;
+  min-height: 100%;
 }
 
 body {
   background-color: var(--primary-light);
+  color: var(--dark);
   font-size: 1.6rem;
 }
 
@@ -35,22 +39,7 @@ input {
   cursor: pointer;
 }
 
-button {
-  padding: 1rem;
-  border: 1px solid var(--dark);
-  border-radius: 5px;
-  font-size: 1.6rem;
-  transition: transform 0.2s ease-in-out;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-button:active {
-  transition: transform 0.05s ease-in-out;
-  transform: scale(1);
-}
+/* HEADER */
 
 .header {
   padding: 6rem 0;
@@ -58,9 +47,10 @@ button:active {
 }
 
 .title {
-  color: var(--dark);
   text-align: center;
 }
+
+/* MAIN */
 
 .main {
   display: flex;
@@ -69,14 +59,8 @@ button:active {
   gap: 100px;
   max-width: 1100px;
   margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  width: 500px;
-  height: 500px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: var(--secondary-light);
+  /* footer support */
+  margin-bottom: 8rem;
 }
 
 .settings {
@@ -86,6 +70,29 @@ button:active {
   justify-content: center;
   gap: 3rem;
   width: 200px;
+}
+
+button {
+  padding: 1rem;
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+  font-size: 1.6rem;
+}
+
+button,
+input[type='color'] {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+
+button:active,
+input[type='color']:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
 }
 
 input[type='color'] {
@@ -102,10 +109,10 @@ input[type='color']::-webkit-color-swatch-wrapper {
 input[type='color']::-webkit-color-swatch {
   border: none;
   border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .range-value {
-  color: var(--dark);
   font-size: 2rem;
   margin-bottom: -2rem;
 }
@@ -130,6 +137,41 @@ input[type='range']::-webkit-slider-thumb {
   margin-top: -6px;
   background: var(--dark);
 }
+
+.grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  background-color: var(--secondary-light);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.fa-github {
+  margin-left: 1rem;
+  color: var(--dark);
+  font-size: 2.4rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(90deg) scale(1.2);
+}
+
+/* MEDIA QUERIES */
 
 @media (max-width: 1100px) {
   .main {
