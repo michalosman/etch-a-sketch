@@ -168,11 +168,11 @@ input[type='range']::-webkit-slider-thumb {
   margin-left: 1rem;
   color: var(--dark);
   font-size: 2.4rem;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .fa-github:hover {
-  transform: rotate(90deg) scale(1.2);
+  transform: rotate(360deg) scale(1.2);
 }
 
 /* MEDIA QUERIES */
