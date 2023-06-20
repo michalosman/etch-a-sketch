@@ -36,10 +36,6 @@ clearBtn.onclick = () => reloadGrid()
 sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
 sizeSlider.onchange = (e) => changeSize(e.target.value)
 
-let mouseDown = false
-document.body.onmousedown = () => (mouseDown = true)
-document.body.onmouseup = () => (mouseDown = false)
-
 function changeSize(value) {
   setCurrentSize(value)
   updateSizeValue(value)
@@ -73,16 +69,17 @@ function setupGrid(size) {
 }
 
 function changeColor(e) {
-  if (e.type === 'mouseover' && !mouseDown) return
-  if (currentMode === 'rainbow') {
-    const randomR = Math.floor(Math.random() * 256)
-    const randomG = Math.floor(Math.random() * 256)
-    const randomB = Math.floor(Math.random() * 256)
-    e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
-  } else if (currentMode === 'color') {
-    e.target.style.backgroundColor = currentColor
-  } else if (currentMode === 'eraser') {
-    e.target.style.backgroundColor = '#fefefe'
+  if (e.buttons === 1) {
+    if (currentMode === 'rainbow') {
+      const randomR = Math.floor(Math.random() * 256)
+      const randomG = Math.floor(Math.random() * 256)
+      const randomB = Math.floor(Math.random() * 256)
+      e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+    } else if (currentMode === 'color') {
+      e.target.style.backgroundColor = currentColor
+    } else if (currentMode === 'eraser') {
+      e.target.style.backgroundColor = '#fefefe'
+    }
   }
 }
 
